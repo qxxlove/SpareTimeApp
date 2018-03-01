@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_gray_bg"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_info_fragment_mine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/activity_dimens_ten"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_head_circle_one"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/icon_beautyl_one"
+        android:layout_margin="@dimen/activity_dimens_ten"
+        />
+     <TextView
+         android:id="@+id/text_name_fragment_mine"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="点击编辑资料"
+         android:textSize="18sp"
+         android:layout_gravity="center"
+         />
+    </LinearLayout>
+</LinearLayout>

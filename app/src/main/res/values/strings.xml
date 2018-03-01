@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SpareTimeApp</string>
+    <string name="title_activity_user_help">UserHelpActivity</string>
+
+    <string name="tab_first_page">首页</string>
+    <string name="tab_attention">关注</string>
+    <string name="tab_music">音乐</string>
+    <string name="tab_my">我的</string>
+
+    <string name="tips">提示</string>
+    <string name="confrim">确定</string>
+    <string name="cancle">取消</string>
+    <string name="press_back_twice">再按一次退出</string>
+    <string name="action_settings">设置</string>
+    <string name="action_permissions">权限</string>
+    <string name="action_dialog">dialog</string>
+    <string name="title_activity_user_info">UserInfoActivity</string>
+    <string name="title_activity_scrolling_test">ScrollingTestActivity</string>
+
+    <string name="bye_burger_float_behavior">com.tjbool.httpwww.sparetimeapp.anim.ByeBurgerFloatButtonBehavior</string>
+    <string name="large_text">dfsgdf</string>
+    <string name="title_activity_apply_permission">ApplyPermissionActivity</string>
+    <string name="camera_and_location_rationale">相机和定位权限</string>
+    <string name="returned_from_app_settings_to_activity">从设置返回当前Activity</string>
+
+
+    <string name="use_help">使用帮助</string>
+
+</resources>
