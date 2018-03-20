@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,11 +20,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.tjbool.httpwww.sparetimeapp.BaseApplication;
 import com.tjbool.httpwww.sparetimeapp.MainActivity;
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.listener.OnPermissionCallbackListener;
-import com.tjbool.httpwww.sparetimeapp.utils.ActivityRecyclerCallBacksUtils;
+import com.tjbool.httpwww.sparetimeapp.weight.ProgressDialog;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,6 +35,7 @@ import java.util.Map;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.os.Build.VERSION_CODES.M;
+import static java.security.AccessController.getContext;
 
 /**
  * Created by melo on 2016/11/24.
@@ -63,6 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
         //写死竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         initIntentParam(getIntent());
         setToolbarStyle();
     }
@@ -214,8 +218,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             case PackageManager.PERMISSION_GRANTED:
                 // 已有授权
                 Log.i("wxl", "已有授权");
-                if (this.onPermissionCallbackListener != null)
+                if (this.onPermissionCallbackListener != null){
                     onPermissionCallbackListener.onGranted();
+                }
+
                 break;
             case PackageManager.PERMISSION_DENIED:
                 // 1、没有权限：尚未请求过权限；
@@ -241,8 +247,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             // Initial
             perms.put(ACCESS_FINE_LOCATION, PackageManager.PERMISSION_GRANTED);
             perms.put(READ_CONTACTS, PackageManager.PERMISSION_GRANTED);
-            for (int i = 0; i < permissions.length; i++)
+            for (int i = 0; i < permissions.length; i++)   {
                 perms.put(permissions[i], grantResults[i]);
+            }
+
             if (perms.get(ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                     && perms.get(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
                 Log.i("wxl", "授权请求被通过");
@@ -263,14 +271,48 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // 授权请求被通过，读取通讯录
                 Log.i("wxl", "onRequestPermissionsResult=授权请求被通过");
-                if (onPermissionCallbackListener != null)
+                if (onPermissionCallbackListener != null) {
                     onPermissionCallbackListener.onGranted();
+                }
+
             } else {
                 Log.i("wxl", "onRequestPermissionsResult=授权请求不被通过");
-                if (onPermissionCallbackListener != null)
+                if (onPermissionCallbackListener != null)   {
                     onPermissionCallbackListener.onDenied();
+                }
+
             }
         }
     }
+
+    private ProgressDialog mProfressDialog = null;
+
+    public void showProgressDialog(String notice) {
+        if(mProfressDialog == null) {
+            mProfressDialog = new ProgressDialog(this,notice);
+        }
+        else{
+            hideProgressDialog();
+            mProfressDialog = new ProgressDialog(this,notice);
+        }
+    }
+
+    public void showProgressDialog(boolean isCanceledOnTouchOutside) {
+        if(mProfressDialog == null) {
+            mProfressDialog = new ProgressDialog(this, isCanceledOnTouchOutside,"");
+        }
+        else{
+            hideProgressDialog();
+            mProfressDialog = new ProgressDialog(this, isCanceledOnTouchOutside,"");
+        }
+    }
+
+    public void hideProgressDialog() {
+        if (mProfressDialog != null) {
+            mProfressDialog.destroyProgressDialog();
+            mProfressDialog = null;
+        }
+    }
+
 
 }

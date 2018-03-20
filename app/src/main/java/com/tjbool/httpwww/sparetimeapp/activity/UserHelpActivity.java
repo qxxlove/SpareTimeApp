@@ -28,6 +28,9 @@ public class UserHelpActivity extends BaseActivity {
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

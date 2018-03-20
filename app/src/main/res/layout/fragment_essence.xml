@@ -25,4 +25,14 @@
         android:background="@color/white"
         android:layout_marginTop="@dimen/activity_dimens_ten"
         />
+    <TextView
+        android:id="@+id/text_soap_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="android soap3.6.2协议测试"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
 </LinearLayout>

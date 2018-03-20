@@ -3,20 +3,17 @@ package com.tjbool.httpwww.sparetimeapp.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionTwoActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.SoapTestActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 /**
  * description: 精华
@@ -84,7 +81,7 @@ public class EssenceFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.text_one_essence_fragment,R.id.text_two_essence_fragment})
+    @OnClick({R.id.text_one_essence_fragment,R.id.text_two_essence_fragment,R.id.text_soap_activity})
     public  void   initClick(View view){
         switch (view.getId()){
             case R.id.text_one_essence_fragment:
@@ -94,6 +91,10 @@ public class EssenceFragment extends BaseFragment {
             case R.id.text_two_essence_fragment:
                 Intent intent1 = new Intent(getActivity(), ApplyPermissionTwoActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.text_soap_activity:
+                Intent intent2 = new Intent(getActivity(), SoapTestActivity.class);
+                startActivity(intent2);
                 break;
             default:
         }
