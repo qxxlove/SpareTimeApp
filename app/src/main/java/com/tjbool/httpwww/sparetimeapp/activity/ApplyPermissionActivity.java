@@ -2,12 +2,10 @@ package com.tjbool.httpwww.sparetimeapp.activity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tjbool.httpwww.sparetimeapp.R;
-import com.tjbool.httpwww.sparetimeapp.utils.BaseUtils;
 
 import java.util.List;
 
@@ -33,6 +30,8 @@ import pub.devrel.easypermissions.EasyPermissions;
  * date: 2018/1/26 14:04
  * update: 2018/1/26
  * version:
+ *   此权限框架 版本1.1.3  而系统发布的版本 已经到1.2.0
+ *   此框架申请定位，录音等权限需待定
  */
 
 public class ApplyPermissionActivity extends AppCompatActivity  implements EasyPermissions.PermissionCallbacks {

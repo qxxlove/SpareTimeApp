@@ -21,6 +21,13 @@ import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/** 
+ * description: skoap协议
+ * autour: TMM
+ * date: 2018/3/27 15:59 
+ * update: 2018/3/27
+ * version: 
+*/
 
 public class SoapTestActivity extends AppCompatActivity {
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tjbool.httpwww.sparetimeapp.activity.CoordinateSystemActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+     <TextView
+         android:id="@+id/text_content_coordinate_activity_zero"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:gravity="center_vertical"
+         android:text=""
+         />
+
+    <com.tjbool.httpwww.sparetimeapp.custom.CustomLinearlayout
+        android:id="@+id/ll_coordinate_activity"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        >
+        <com.tjbool.httpwww.sparetimeapp.custom.CustomTextViewEvent
+            android:id="@+id/text_coordinate_activity"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/accent_bottom_navigation"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            />
+    </com.tjbool.httpwww.sparetimeapp.custom.CustomLinearlayout>
+
+
+
+    <TextView
+        android:id="@+id/text_content_coordinate_activity_one"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/text_content_coordinate_activity_two"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+
+        />
+    <TextView
+        android:id="@+id/text_content_coordinate_activity_three"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/text_content_coordinate_activity_four"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/ll_content_coordinate_activity_one"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/ll_content_coordinate_activity_two"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/ll_content_coordinate_activity_three"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/ll_content_coordinate_activity_four"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="view自身的顶边到其父布局顶边的距离 "
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+        
+    </LinearLayout>
+</ScrollView>
