@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,8 +24,6 @@ import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.listener.OnPermissionCallbackListener;
 import com.tjbool.httpwww.sparetimeapp.weight.ProgressDialog;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +32,6 @@ import java.util.Map;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.os.Build.VERSION_CODES.M;
-import static java.security.AccessController.getContext;
 
 /**
  * Created by melo on 2016/11/24.
@@ -49,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static int REQUEST_READ_CONTACTS = 101;
     public static int REQUEST_READ_CONTACTS_LOCATION = 102;
     public OnPermissionCallbackListener onPermissionCallbackListener;
-
+    protected   Context mContext ;
 
 
 
@@ -66,9 +62,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
         //写死竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+        mContext = this;
         initIntentParam(getIntent());
         setToolbarStyle();
+
     }
 
     // 初始化传入的参数
@@ -150,6 +147,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+
+    protected    void   startActivity (Context context,Class cla){
+        Intent intent = new Intent(context,cla);
+        startActivity(intent);
     }
 
 

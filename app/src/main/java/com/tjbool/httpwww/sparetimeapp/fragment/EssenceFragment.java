@@ -9,6 +9,10 @@ import android.widget.TextView;
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionTwoActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.CanvasStudyActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.CoordinateSystemActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.DaggerStudyActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.DaggerStudyTwoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SoapTestActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
 
@@ -81,7 +85,9 @@ public class EssenceFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.text_one_essence_fragment,R.id.text_two_essence_fragment,R.id.text_soap_activity})
+    @OnClick({R.id.text_one_essence_fragment,R.id.text_two_essence_fragment,R.id.text_soap_activity,
+            R.id.text_coordinate_activity,R.id.text_canvas_one_activity,R.id.text_dagger_activity,
+            R.id.text_dagger_two_activity})
     public  void   initClick(View view){
         switch (view.getId()){
             case R.id.text_one_essence_fragment:
@@ -95,6 +101,22 @@ public class EssenceFragment extends BaseFragment {
             case R.id.text_soap_activity:
                 Intent intent2 = new Intent(getActivity(), SoapTestActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.text_coordinate_activity:
+                Intent intent3 = new Intent(getActivity(), CoordinateSystemActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.text_canvas_one_activity:
+                Intent intent4 = new Intent(getActivity(), CanvasStudyActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.text_dagger_activity:
+                Intent intent5 = new Intent(getActivity(), DaggerStudyActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.text_dagger_two_activity:
+                Intent intent6 = new Intent(getActivity(), DaggerStudyTwoActivity.class);
+                startActivity(intent6);
                 break;
             default:
         }
