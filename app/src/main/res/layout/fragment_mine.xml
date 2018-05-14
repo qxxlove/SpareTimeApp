@@ -31,4 +31,16 @@
          android:layout_gravity="center"
          />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_exit_app"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="退出登录"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+
 </LinearLayout>

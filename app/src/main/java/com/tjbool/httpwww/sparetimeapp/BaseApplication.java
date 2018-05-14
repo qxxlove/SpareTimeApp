@@ -18,8 +18,9 @@ public class BaseApplication extends Application {
     public static Context sAppContext;
     public static BaseApplication baseApplication;
 
+    public static final String  EXIT = "APPEXIT";
 
-    public ActivityRecyclerCallBacksUtils activityRecyclerCallBacksUtils = new ActivityRecyclerCallBacksUtils();
+    public static ActivityRecyclerCallBacksUtils activityRecyclerCallBacksUtils = new ActivityRecyclerCallBacksUtils();
 
     @Override
     public void onCreate() {
@@ -58,4 +59,9 @@ public class BaseApplication extends Application {
     public static String getAppCacheDir() {
         return sCacheDir;
     }
+
+    public static ActivityRecyclerCallBacksUtils getActivityRecyclerCallBacksUtils() {
+        return activityRecyclerCallBacksUtils;
+    } 
+
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together"
+    >
+    <!--下面的动画同时进行-->
+    <objectAnimator
+        android:duration="2000"
+        android:propertyName="translationX"
+        android:valueFrom="0"
+        android:valueTo="300"
+        android:valueType="floatType" >
+    </objectAnimator>
+
+    <objectAnimator
+        android:duration="3000"
+        android:propertyName="rotation"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:valueType="floatType" >
+    </objectAnimator>
+
+
+</set>

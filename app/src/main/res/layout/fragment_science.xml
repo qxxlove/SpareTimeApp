@@ -4,10 +4,23 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <TextView
+        android:id="@+id/text_one_single_activity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="科技"
+        android:layout_height="50dp"
+        android:text="android 常见的单选/多选"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/text_animation_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="android 补间动画学习"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
         />
 </LinearLayout>

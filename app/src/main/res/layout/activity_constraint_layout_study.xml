@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tjbool.httpwww.sparetimeapp.layout.ConstraintLayoutStudyActivity">
+
+  <TextView
+      android:id="@+id/text_constraint_layout_one"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:text="A"
+      android:textSize="20sp"
+      android:background="@color/accent_bottom_navigation"
+      app:layout_constraintLeft_toLeftOf="parent"
+      android:gravity="center_horizontal"
+      />
+    <TextView
+        android:id="@+id/text_constraint_layout_two"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textSize="20sp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/text_constraint_layout_one"
+
+        />
+  <TextView
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:text="C"
+      android:textSize="20sp"
+      android:background="@color/inactive_bottom_navigation"
+      android:gravity="center_horizontal"
+      app:layout_constraintLeft_toRightOf="@id/text_constraint_layout_two"
+      app:layout_goneMarginLeft="@dimen/activity_dimens_ten"
+
+      />
+
+
+
+    <Button
+        android:id="@+id/button_constraint_layout_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.8"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintCircle="@id/button_constraint_layout_one"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="45"
+        />
+
+
+    <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="1"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       />
+
+</android.support.constraint.ConstraintLayout>

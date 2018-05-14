@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tjbool.httpwww.sparetimeapp.activity.AnimationStudyActivity">
+
+
+    <ImageView
+        android:id="@+id/image_one"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/icon_animation_bg"
+        />
+
+     <TextView
+         android:id="@+id/text_one"
+         android:layout_width="match_parent"
+         android:background="@color/white"
+         android:layout_marginTop="@dimen/activity_dimens_ten"
+         android:layout_height="50dp"
+         android:gravity="center"
+         android:text="位移效果"
+         />
+    <TextView
+        android:id="@+id/text_two"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="缩放效果"
+        />
+    <TextView
+        android:id="@+id/text_three"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="旋转效果"
+        />
+
+    <TextView
+        android:id="@+id/text_four"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="属性动画"
+        />
+
+
+
+</LinearLayout>

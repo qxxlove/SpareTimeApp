@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tjbool.httpwww.sparetimeapp.activity.AnimatorStudyActivity">
+
+    <TextView
+        android:id="@+id/text_animator_set_one"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="组合动画一"
+        />
+    <TextView
+        android:id="@+id/text_animator_set_two"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="组合动画二"
+        />
+
+    <TextView
+        android:id="@+id/text_valueAnimator_animator_one"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="valueAnimator_ofInt"
+        />
+
+    <TextView
+        android:id="@+id/text_objectAnimator_one"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="objectAnimator"
+        />
+    <TextView
+        android:id="@+id/text_objectAnimator_two"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="自定义objectAnimator"
+        />
+
+
+    <com.tjbool.httpwww.sparetimeapp.custom.MyCricleView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

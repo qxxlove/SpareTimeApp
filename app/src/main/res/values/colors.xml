@@ -8,6 +8,8 @@
     <color name="common_content_bg">#f9f9fd</color>
     <color name="common_gray_bg">#fafafa</color>
     <color name="white">#ffffff</color>
+    <color name="black_66">#666666</color>
+    <color name="black">#000000</color>
 
     <!-- Bottom Navigation -->
     <color name="bg_bottom_navigation">#fcfcfc</color>

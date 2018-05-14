@@ -26,4 +26,4 @@ public interface DaggerComponentApplication {
     BaseDaggerAplication myApplication();
 
 
-}
+}                                 

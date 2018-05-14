@@ -100,7 +100,7 @@ public class BaseViewHolder {
     }
 
     public BaseViewHolder setBackResource(int resourceId,int resId) {
-        ((RelativeLayout)getView(resourceId)).setBackgroundResource(resId);
+        ((TextView)getView(resourceId)).setBackgroundResource(resId);
         return  this;
     }
     public BaseViewHolder setTextContentColor(int resourceId,int resId) {

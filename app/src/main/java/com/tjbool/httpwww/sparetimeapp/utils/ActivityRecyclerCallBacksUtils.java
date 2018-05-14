@@ -3,10 +3,12 @@ package com.tjbool.httpwww.sparetimeapp.utils;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.tjbool.httpwww.sparetimeapp.listener.ActivityManagerState;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -22,10 +24,24 @@ public class ActivityRecyclerCallBacksUtils  implements Application.ActivityLife
     private List<Activity> resumeActivity=new ArrayList<>();
 
 
+    // 此处采用 LinkedList作为容器，增删速度快
+    public static LinkedList<Activity> activityLinkedList = new LinkedList<>();
+
+
+
 
     @Override
     public void onActivityCreated(Activity activity, Bundle bundle) {
         activityList.add(0, activity);
+
+        Log.d("TAG", "onActivityCreated: " + activity.getLocalClassName());
+        activityLinkedList.add(activity);
+        // 在Activity启动时（onCreate()） 写入Activity实例到容器内
+
+
+
+
+
     }
 
     @Override
@@ -58,6 +74,16 @@ public class ActivityRecyclerCallBacksUtils  implements Application.ActivityLife
     @Override
     public void onActivityDestroyed(Activity activity) {
         activityList.remove(activity);
+
+
+        Log.d("TAG", "onActivityDestroyed: " + activity.getLocalClassName());
+        activityLinkedList.remove(activity);
+        // 在Activity结束时（Destroyed（）） 写出Activity实例
+
+
+
+
+
     }
 
     /**
@@ -86,4 +112,23 @@ public class ActivityRecyclerCallBacksUtils  implements Application.ActivityLife
     public boolean isFrontActivity() {
         return    resumeActivity.size() > 0;
     }
+
+    public void exitApp() { Log.d("TAG", "容器内的Activity列表如下 ");
+    // 先打印当前容器内的Activity列表
+        for (Activity activity : activityLinkedList) {
+            Log.d("TAG", activity.getLocalClassName());
+        }
+        Log.d("TAG", "正逐步退出容器内所有Activity");
+        // 逐个退出Activity
+        for (Activity activity : activityLinkedList) {
+            activity.finish();
+        }
+        // 结束进程
+        // System.exit(0);
+        }
+
+
+
+
+
 }

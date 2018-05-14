@@ -84,6 +84,22 @@
         </activity>
         <activity android:name=".activity.DaggerStudyFourActivity">
         </activity>
+        <activity android:name=".event.MotionEventStudyActivity">
+        </activity>
+        <activity android:name=".layout.ConstraintLayoutStudyActivity">
+        </activity>
+        <activity android:name=".activity.MotionEventStudyOneActivity">
+        </activity>
+        <activity android:name=".activity.SingleMutileActivity">
+        </activity>
+        <activity android:name=".activity.SingleMUtileTwoActivity">
+        </activity>
+        <activity android:name=".activity.AnimationStudyActivity">
+        </activity>
+        <activity android:name=".activity.AnimatorStudyActivity">
+        </activity>
+        <activity android:name=".activity.AnimatorStudyTwoActivity">
+        </activity>
     </application>
 
 </manifest>

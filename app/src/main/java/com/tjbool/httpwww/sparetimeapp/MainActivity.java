@@ -20,7 +20,6 @@ import com.tjbool.httpwww.sparetimeapp.fragment.AttentionFragment;
 import com.tjbool.httpwww.sparetimeapp.fragment.HomeFragment;
 import com.tjbool.httpwww.sparetimeapp.fragment.MusicFragment;
 import com.tjbool.httpwww.sparetimeapp.fragment.MyFragment;
-import com.tjbool.httpwww.sparetimeapp.utils.ActivityRecyclerCallBacksUtils;
 import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -224,5 +223,19 @@ public class MainActivity extends BaseActivity  implements  BaseFragment.OnFragm
     @Override
     public void onFragmentInteraction(Bundle bundle) {
 
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (intent != null) {
+            // 是否退出App的标识
+            boolean isExitApp = intent.getBooleanExtra("exit", false);
+            if (isExitApp) {
+                // 关闭自身
+                this.finish();
+            }
+        }
     }
 }
