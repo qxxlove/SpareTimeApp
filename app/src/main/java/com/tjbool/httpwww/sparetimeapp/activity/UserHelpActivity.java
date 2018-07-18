@@ -27,7 +27,8 @@ public class UserHelpActivity extends BaseActivity {
     RelativeLayout contentUserHelp;
     @BindView(R.id.fab)
     FloatingActionButton fab;
-
+     @BindView(R.id.text_one)
+     TextView textViewOne;
 
 
 
@@ -37,6 +38,14 @@ public class UserHelpActivity extends BaseActivity {
         setContentView(R.layout.activity_user_help);
         ButterKnife.bind(this);
         initToolBar();
+
+        
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                textViewOne.setText("你好吗");
+            }
+        });
 
 
         fab.setOnClickListener(new View.OnClickListener() {

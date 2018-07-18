@@ -1,6 +1,7 @@
 package com.tjbool.httpwww.sparetimeapp.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
@@ -14,6 +15,8 @@ import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
 */
 
 public class MusicFragment extends BaseFragment {
+
+    private static final String TAG = "MusicFragment";
 
     public static MusicFragment newInstance(String title) {
         MusicFragment f = new MusicFragment();
@@ -43,5 +46,11 @@ public class MusicFragment extends BaseFragment {
     @Override
     public int setFragmentLayoutID() {
         return R.layout.fragment_work;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.e(TAG,"MusicFragment 的onHiddenChanged = " +hidden);
     }
 }

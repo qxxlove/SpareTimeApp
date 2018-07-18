@@ -23,4 +23,24 @@
         android:background="@color/white"
         android:layout_marginTop="@dimen/activity_dimens_ten"
         />
+    <TextView
+        android:id="@+id/text_show_popupWindow"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="android 弹出PopupWindow"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/text_street_scape_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="android 街景Activity"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
 </LinearLayout>

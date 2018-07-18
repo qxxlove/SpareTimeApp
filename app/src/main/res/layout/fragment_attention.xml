@@ -2,14 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@color/common_content_bg"
+    >
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="关注"
         android:gravity="center"
         android:textSize="20sp"
+        android:background="@color/white"
+
         />
+
+    <TextView
+        android:id="@+id/text_within_ip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="关注"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+    <TextView
+        android:id="@+id/text_abroad_ip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="关注"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+
+
 
 </LinearLayout>

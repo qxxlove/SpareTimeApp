@@ -1,6 +1,7 @@
 package com.tjbool.httpwww.sparetimeapp.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
@@ -42,5 +43,13 @@ public class GameFragment extends BaseFragment {
     @Override
     public int setFragmentLayoutID() {
         return R.layout.fragment_game;
+    }
+
+
+
+    @Override
+    protected void lazyLoadData() {
+        super.lazyLoadData();
+        Log.e(getClass().getSimpleName(), "GameFragment (此时可用)lazyLoadData");
     }
 }

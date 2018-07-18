@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -47,7 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public OnPermissionCallbackListener onPermissionCallbackListener;
     protected   Context mContext ;
 
-
+    protected static Handler mHandler = new Handler(Looper.getMainLooper());
 
     /**
      * 最后一次按下返回键的时间

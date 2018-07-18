@@ -104,6 +104,7 @@ public class SingleMutileActivity extends BaseActivity implements SingleAdapterT
         singleAdapterTwo.setOnRedBallListener(this);
         gdSingleTwo.setAdapter(singleAdapterTwo);
 
+      
     }
 
     @Override

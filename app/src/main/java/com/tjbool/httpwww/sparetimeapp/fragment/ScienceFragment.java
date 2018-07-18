@@ -2,12 +2,16 @@ package com.tjbool.httpwww.sparetimeapp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.activity.AnimationStudyActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SingleMutileActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.StreetScapeActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
+import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
+import com.tjbool.httpwww.sparetimeapp.weight.CustomPopupWindowOne;
 
 import butterknife.OnClick;
 
@@ -53,7 +57,8 @@ public class ScienceFragment extends BaseFragment {
     }
 
     
-    @OnClick({R.id.text_one_single_activity,R.id.text_animation_activity})
+    @OnClick({R.id.text_one_single_activity,R.id.text_animation_activity,R.id.text_show_popupWindow,
+            R.id.text_street_scape_activity})
     public  void   initClick(View view){
         switch (view.getId()){
             case R.id.text_one_single_activity:
@@ -64,11 +69,23 @@ public class ScienceFragment extends BaseFragment {
                 intent = new Intent(getActivity(), AnimationStudyActivity.class);
                 startActivity(intent);
                 break;
-           
+            case R.id.text_show_popupWindow:
+                ToastUtils.showLongToast("点击了");
+                CustomPopupWindowOne customPopupWindowOne = new CustomPopupWindowOne(getActivity());
+                customPopupWindowOne.showPopupWindow();
+                break;
+            case R.id.text_street_scape_activity:
+                intent = new Intent(getActivity(), StreetScapeActivity.class);
+                startActivity(intent);
+                break;
             default:
         }
     }
 
+    @Override
+    protected void lazyLoadData() {
+        super.lazyLoadData();
+        Log.e(getClass().getSimpleName(), "ScienceFragment (此时可用)lazyLoadData");
 
-
+    }
 }

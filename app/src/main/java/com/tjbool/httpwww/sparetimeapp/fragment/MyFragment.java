@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyFragment extends BaseFragment {
 
+    private static final String TAG = "MyFragment";
     @BindView(R.id.img_head_circle_one)
     CircleImageView imgHeadCircleOne;
     @BindView(R.id.text_name_fragment_mine)
@@ -228,4 +230,12 @@ public class MyFragment extends BaseFragment {
         super.onDestroyView();
 
     }
+
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.e(TAG,"MyFragment 的onHiddenChanged = " +hidden);
+    }
+
 }

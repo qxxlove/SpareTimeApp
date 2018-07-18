@@ -26,6 +26,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * description:
+ * autour: TMM
+ * date: 2018/7/13 17:20
+ * update: 2018/7/13
+ * version:
+ *           死磕Fragment的生命周期
+ *    参考： https://mp.weixin.qq.com/s/FBfAR3W3y6R-q4Rt3uytKA
+ *
+*/
+
 public class MainActivity extends BaseActivity  implements  BaseFragment.OnFragmentInteractionListener,Toolbar.OnMenuItemClickListener {
 
     @BindView(R.id.tv_toolbar_title)

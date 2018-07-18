@@ -33,7 +33,7 @@ import javax.inject.Inject;
 public class MainActivity extends BaseActivity implements MainContract.View {
 
 
-    @Inject
+    @Inject                                            
     String className;
     @Inject
     SharedPreferences sp;

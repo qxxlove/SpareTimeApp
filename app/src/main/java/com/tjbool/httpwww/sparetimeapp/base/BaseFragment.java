@@ -19,12 +19,19 @@ import butterknife.Unbinder;
  * date: 2018/1/17 10:08
  * update: 2018/1/17
  * version:
- *      1.  关于 Fragment 的管理，主要就是两种方式，一是 add 和 hide 管理，二是 ViewPager + Fragment
+ *      1.  关于 Fragment 的管理，主要就是两种方式，
+ *                               一是 add 和 hide 管理，
+ *                               二是 ViewPager + Fragment
  *      2.  什么是懒加载？    即Fragment 的 UI 对用户可见时才加载数据。
- *          如何判断 Fragment 的 UI 是否对用户可见？      Fragment 提供了一个方法 public void setUserVisibleHint(boolean isVisibleToUser)
- *          setUserVisibleHint 在什么时候调用？           对于单个 Fragment，setUserVisibleHint 是不会被调用的，只有该 Fragment 在 ViewPager 里才会被调用
+ *          如何判断 Fragment 的 UI 是否对用户可见？
+ *                  Fragment 提供了一个方法 public void setUserVisibleHint(boolean isVisibleToUser)
+ *          setUserVisibleHint 在什么时候调用？
+ *                  对于单个 Fragment，setUserVisibleHint 是不会被调用的，
+ *                  只有该 Fragment 在 ViewPager 里才会被调用
  *
- *      3. 懒加载： 主要是因为预加载的 Fragment 已经创建完成一路调用了 onAttach --> onPause，也就是说这个 Fragment 此时可用的，懒加载才有理由生效。
+ *      3. 懒加载： 主要是因为预加载的 Fragment
+ *                 已经创建完成一路调用了 onAttach --> onPause，也就是说这个 Fragment 此时可用的，
+ *                 懒加载才有理由生效。
  *
 */
 

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tjbool.httpwww.sparetimeapp.R;
+import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +68,15 @@ public class AnimationStudyActivity extends AppCompatActivity {
       //  initScaleByJavaAnimation();
        // initRotateByXmlAnimation();
         initRotateByJavaAnimation();
+       initData();
+    }
+
+    private void initData() {
+        String time = "2018-05-01 15;15;21";
+        time.toString().trim().substring(11,15);
+        ToastUtils.showLongToast(time);
+
+
     }
 
     private void initRotateByJavaAnimation() {
