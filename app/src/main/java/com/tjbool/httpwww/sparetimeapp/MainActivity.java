@@ -250,3 +250,32 @@ public class MainActivity extends BaseActivity  implements  BaseFragment.OnFragm
         }
     }
 }
+
+
+
+/*
+ 1. Error:Execution failed for task ':app:transformClassesWithDexBuilderForDebug'.
+        com.android.build.api.transform.TransformException:
+        java.lang.IllegalStateException: Dex archives: setting .DEX extension only for .CLASS files
+        解决; 
+           由于 app gradle中同时引用了：V7，V4相同的jar包
+                例如：compile 'com.android.support:support-v4:25.3.1'
+                      compile 'com.android.support:appcompat-v7:25.3.1'
+                      都是25.3.1。建议江v7隐藏掉。v4的兼容性更强
+
+ 2.Warning:Ignoring InnerClasses attribute for an anonymous inner class
+ 
+ 3.Error:Execution failed for task ':app:processDebugResources'.
+> Failed to execute aapt
+Error:org.gradle.process.internal.ExecException: Process 'command 'E:\AndroidStudio\sdk\build-tools\27.0.2\aapt.exe'' finished with non-zero exit value 1
+Error:com.android.ide.common.process.ProcessException: Error while executing process E:\AndroidStudio\sdk\build-tools\27.0.2\aapt.exe with arguments {package -f --no-crunch -I E:\AndroidStudio\sdk\platforms\android-27\android.jar -M \\?\G:\github\SpareTimeApp\app\build\intermediates\manifests\full\debug\AndroidManifest.xml -S G:\github\SpareTimeApp\app\build\intermediates\res\merged\debug -m -J \\?\G:\github\SpareTimeApp\app\build\generated\source\r\debug -F G:\github\SpareTimeApp\app\build\intermediates\res\debug\resources-debug.ap_ --custom-package com.tjbool.httpwww.sparetimeapp -0 apk --preferred-density tvdpi --output-text-symbols \\?\G:\github\SpareTimeApp\app\build\intermediates\symbols\debug --no-version-vectors}
+Error:java.util.concurrent.ExecutionException: com.android.ide.common.process.ProcessException: Error while executing process E:\AndroidStudio\sdk\build-tools\27.0.2\aapt.exe with arguments {package -f --no-crunch -I E:\AndroidStudio\sdk\platforms\android-27\android.jar -M \\?\G:\github\SpareTimeApp\app\build\intermediates\manifests\full\debug\AndroidManifest.xml -S G:\github\SpareTimeApp\app\build\intermediates\res\merged\debug -m -J \\?\G:\github\SpareTimeApp\app\build\generated\source\r\debug -F G:\github\SpareTimeApp\app\build\intermediates\res\debug\resources-debug.ap_ --custom-package com.tjbool.httpwww.sparetimeapp -0 apk --preferred-density tvdpi --output-text-symbols \\?\G:\github\SpareTimeApp\app\build\intermediates\symbols\debug --no-version-vectors}
+Error:(35, 45) No resource found that matches the given name (at 'layout_constraintEnd_toStartOf' with value '@id/text_constraint_layout_five').
+Error:(20, 45) No resource found that matches the given name (at 'layout_constraintEnd_toStartOf' with value '@id/text_constraint_layout_four').
+G:\github\SpareTimeApp\app\build\intermediates\res\merged\debug\layout\activity_constraint_layout_activity_two.xml
+Error:(35, 45) No resource found that matches the given name (at 'layout_constraintEnd_toStartOf' with value '@id/text_constraint_layout_five').
+Error:(20, 45) No resource found that matches the given name (at 'layout_constraintEnd_toStartOf' with value '@id/text_constraint_layout_four').
+G:\github\SpareTimeApp\app\src\main\res\layout\activity_constraint_layout_activity_two.xml
+
+
+        */

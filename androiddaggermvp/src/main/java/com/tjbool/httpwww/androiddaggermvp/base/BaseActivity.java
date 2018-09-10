@@ -16,6 +16,12 @@ import dagger.android.AndroidInjection;
 
 public class BaseActivity  extends AppCompatActivity {
 
+
+    /**
+     * Activity 级依赖注入
+     * 具体分析  AndroidInjection 源码
+     *   我们需要找到真正的activityInjector对象，就是DispatchingAndroidInjector：
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         AndroidInjection.inject(this);

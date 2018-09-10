@@ -28,7 +28,7 @@ android {
 
     sourceSets {
         main {
-            assets.srcDirs = ['src/main/assets', 'src/main/assets/','src/main/aidl']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/', 'src/main/aidl']
             jniLibs.srcDirs = ['libs']
         }
     }
@@ -39,6 +39,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+  
 }
 
 dependencies {
@@ -70,6 +73,25 @@ dependencies {
     // dagger
     compile 'com.google.dagger:dagger:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    
+    /**BAsePopup*/
     compile 'com.github.razerdp:BasePopup:1.9.4'
-    implementation files('libs/BaiduLBS_Android.jar')
+    /**百度jar*/
+    //implementation files('libs/BaiduLBS_Android.jar')
+    /**Lifecycle组件*/
+     //compile "android.arch.lifecycle:runtime:1.0.0-alpha1"
+     //compile "android.arch.lifecycle:extensions:1.0.0-alpha1"
+     //annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha1"
+ 
+    /**Rxjava*/
+    compile          'io.reactivex.rxjava2:rxjava:2.0.6'
+    compile         'io.reactivex.rxjava2:rxandroid:2.0.1'
+   compile         'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    /**RxLifecycle*/
+    compile         'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    compile         'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+
+   //  debugImplementation  'com.github.whataa:pandora:v1.1.3'
+   //  releaseImplementation 'com.github.whataa:pandora-no-op:v1.1.0'
+
 }

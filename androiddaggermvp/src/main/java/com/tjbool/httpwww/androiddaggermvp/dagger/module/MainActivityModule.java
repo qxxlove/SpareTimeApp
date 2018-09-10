@@ -10,10 +10,13 @@ import com.tjbool.httpwww.androiddaggermvp.mvp.view.MainActivity;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by QingMei on 2017/8/16.
- * desc:
- */
+/** 
+ * description:   MainActivityModule 和  SecondActivityModule  衍生出  AllActivitysModule
+ * autour: TMM
+ * date: 2018/7/20 14:17 
+ * update: 2018/7/20
+ * version: 
+*/
 @Module
 public class MainActivityModule {
 

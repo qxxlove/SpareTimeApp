@@ -43,4 +43,14 @@
         android:background="@color/white"
         android:layout_marginTop="@dimen/activity_dimens_ten"
         />
+    <TextView
+        android:id="@+id/text_make_dimens"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="android 生成dimens文件"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
 </LinearLayout>

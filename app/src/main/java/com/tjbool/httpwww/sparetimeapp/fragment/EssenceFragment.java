@@ -11,8 +11,6 @@ import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionTwoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.CanvasStudyActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.CoordinateSystemActivity;
-import com.tjbool.httpwww.sparetimeapp.activity.DaggerStudyActivity;
-import com.tjbool.httpwww.sparetimeapp.activity.DaggerStudyTwoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.MotionEventStudyOneActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SoapTestActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
@@ -131,12 +129,12 @@ public class EssenceFragment extends BaseFragment {
                 startActivity(intent4);
                 break;
             case R.id.text_dagger_activity:
-                Intent intent5 = new Intent(getActivity(), DaggerStudyActivity.class);
-                startActivity(intent5);
+             //   Intent intent5 = new Intent(getActivity(), DaggerStudyActivity.class);
+              //  startActivity(intent5);
                 break;
             case R.id.text_dagger_two_activity:
-                Intent intent6 = new Intent(getActivity(), DaggerStudyTwoActivity.class);
-                startActivity(intent6);
+              //  Intent intent6 = new Intent(getActivity(), DaggerStudyTwoActivity.class);
+             //   startActivity(intent6);
                 break;
             case R.id.text_constraint_activity:
                 Intent intent7 = new Intent(getActivity(), ConstraintLayoutStudyActivity.class);

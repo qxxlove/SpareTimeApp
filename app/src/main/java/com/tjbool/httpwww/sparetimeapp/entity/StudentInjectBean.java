@@ -10,7 +10,7 @@ package com.tjbool.httpwww.sparetimeapp.entity;
 
 public class StudentInjectBean  extends  BaseEntity{
 
-    //@Inject
+       
     public StudentInjectBean() {
     }
 

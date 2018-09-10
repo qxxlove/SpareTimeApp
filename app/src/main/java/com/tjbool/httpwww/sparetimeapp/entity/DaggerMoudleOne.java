@@ -1,9 +1,6 @@
 package com.tjbool.httpwww.sparetimeapp.entity;
 
-import com.tjbool.httpwww.sparetimeapp.activity.DaggerStudyActivity;
-
 import dagger.Module;
-import dagger.Provides;
 
 /**
  * description:   dagger的Module
@@ -16,16 +13,6 @@ import dagger.Provides;
 @Module
 public class DaggerMoudleOne  {
 
-    private DaggerStudyActivity daggerStudyActivity;
-
-    public DaggerMoudleOne(DaggerStudyActivity daggerStudyActivity) {
-        this.daggerStudyActivity = daggerStudyActivity;
-    }
-
-    //下面为新增代码：
-    @Provides
-    StudentInjectBean provideStudent(){
-        return new StudentInjectBean();
-    }
+ 
 
 }

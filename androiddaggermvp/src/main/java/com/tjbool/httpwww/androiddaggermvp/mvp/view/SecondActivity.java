@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.tjbool.httpwww.androiddaggermvp.R;
-
+import com.tjbool.httpwww.androiddaggermvp.base.BaseActivity;
 
 import javax.inject.Inject;
 

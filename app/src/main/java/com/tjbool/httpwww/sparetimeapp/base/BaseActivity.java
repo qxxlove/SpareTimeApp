@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static int REQUEST_READ_CONTACTS = 101;
     public static int REQUEST_READ_CONTACTS_LOCATION = 102;
     public OnPermissionCallbackListener onPermissionCallbackListener;
-    protected   Context mContext ;
+    protected Context mContext ;
 
     protected static Handler mHandler = new Handler(Looper.getMainLooper());
 
@@ -58,6 +58,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     // 定义时间差
     private static final long TIME_INTERVAL = 2 * 1000;
 
+      /** ① 我们把所有生命周期事件都传给了lifecycleSubject了，
+        或者说，lifecycleSubject已经接收到了并能够对外发射各种生命周期事件的能力了*/
+ //   protected final PublishSubject<ActivityEvent> lifecycleSubject = PublishSubject.create();
+
+    /** ② 我们希望这个发起网络请求的Observable 监听Activity的DESTORY事件，
+       一旦发生了DESTORY就自动断开Observer，即使网络数据回来了也不再传递给Observer去绘制UI
+
+         一， 我们最常见的做法，
+             就是直接在 发起网络请求的Observable.bindUntilEvent(ActivityEvent.DESTORY)
+
+         二，
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
@@ -67,8 +79,50 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         initIntentParam(getIntent());
         setToolbarStyle();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
 
     }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+       
+    }
+
+ /*
+   代码可能有问题，但思路没问题
+      
+    @NonNull
+    @Override
+    public <T> Observable.Transformer<T, T> bindUntilEvent(@NonNull final ActivityLifeCycleEvent event) {
+        return new Observable.Transformer<T, T>() {
+            @Override
+            public Observable<T> call(Observable<T> sourceObservable) {
+                Observable<ActivityLifeCycleEvent> compareLifecycleObservable =
+                        lifecycleSubject.takeFirst(new Func1<ActivityEvent, Boolean>() {
+                            @Override
+                            public Boolean call(ActivityEvent activityEvent) {
+                                // lifecycleSubject发射出的生命周期事件等于绑定的生命周期事件时
+                                return activityEvent.equals(event);
+                            }
+                        });
+                //它的作用是监听compareLifecycleObservable，一旦compareLifecycleObservable对外发射了数据，就自动把networkObservable停掉；
+                return sourceObservable.takeUntil(compareLifecycleObservable);
+            }
+        };
+    }*/
+  
+
+   
+
 
     // 初始化传入的参数
     protected abstract void initIntentParam(Intent intent);

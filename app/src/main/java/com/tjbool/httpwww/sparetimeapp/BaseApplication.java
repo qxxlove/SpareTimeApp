@@ -24,7 +24,8 @@ public class BaseApplication extends Application {
 
     public static final String  EXIT = "APPEXIT";
 
-    public static ActivityRecyclerCallBacksUtils activityRecyclerCallBacksUtils = new ActivityRecyclerCallBacksUtils();
+    public static ActivityRecyclerCallBacksUtils activityRecyclerCallBacksUtils =
+                             new ActivityRecyclerCallBacksUtils();
 
     public BMapManager mBMapManager = null;
 
@@ -38,6 +39,8 @@ public class BaseApplication extends Application {
         // 在SDK各功能组件使用之前都需要调用,因此建议在Application初始化
         //SDKInitializer.initialize(this);
         initEngineManager(this);
+        /**作用：就是在你调用这个方法registerActivityLifecycleCallbacks（）传入这个接口实现类后,
+         * 系统会在每个 Activity 执行完对应的生命周期后都调用这个实现类中对应的方法*/
         registerActivityLifecycleCallbacks(activityRecyclerCallBacksUtils);
 
         /**

@@ -23,18 +23,32 @@ import dagger.android.HasActivityInjector;
  * autour: TMM
  * date: 2018/4/26 16:15 
  * update: 2018/4/26
- * version: 
+ * version:
+ *
+ *   思考：
+     1.MyApplication中的dispatchingAndroidInjector成员是干嘛的
+     2.MyApplication实现的HasActivityInjector接口和实现的activityInjector()方法又是干嘛的
+     3.为什么这样2行依赖注入代码，就能代替之前我们每个Activity都需要写的模板代码呢：
+
+ *
+ *
 */
 
 public class BaseApplication   extends Application   implements HasActivityInjector {
 
+    // 参考： BaseApplication_MembersInjector 源码
+    // 自我理解： 保存所有对象的实例，然后注入到BaseApplication
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
 
+    /**
+     * Application 级依赖注入
+     */
     @Override
     public void onCreate() {
         super.onCreate();
+        // 初始化所有的对象
         DaggerBaseApplicationComponent.create().inject(this);
     }
 

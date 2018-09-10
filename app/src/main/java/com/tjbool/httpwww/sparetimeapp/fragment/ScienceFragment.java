@@ -2,6 +2,7 @@ package com.tjbool.httpwww.sparetimeapp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
@@ -11,6 +12,8 @@ import com.tjbool.httpwww.sparetimeapp.activity.SingleMutileActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.StreetScapeActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
 import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
+import com.tjbool.httpwww.sparetimeapp.utils.screen.DimenTypes;
+import com.tjbool.httpwww.sparetimeapp.utils.screen.MakeUtils;
 import com.tjbool.httpwww.sparetimeapp.weight.CustomPopupWindowOne;
 
 import butterknife.OnClick;
@@ -26,6 +29,10 @@ import butterknife.OnClick;
 public class ScienceFragment extends BaseFragment {
 
     private  Intent intent;
+    /**
+     * 设计稿尺寸(根据自己设计师的设计稿的宽度填入)
+     */
+    private static final int DESIGN_WIDTH = 375;
 
 
     public static ScienceFragment newInstance(String title) {
@@ -58,7 +65,7 @@ public class ScienceFragment extends BaseFragment {
 
     
     @OnClick({R.id.text_one_single_activity,R.id.text_animation_activity,R.id.text_show_popupWindow,
-            R.id.text_street_scape_activity})
+            R.id.text_street_scape_activity,R.id.text_make_dimens})
     public  void   initClick(View view){
         switch (view.getId()){
             case R.id.text_one_single_activity:
@@ -77,6 +84,12 @@ public class ScienceFragment extends BaseFragment {
             case R.id.text_street_scape_activity:
                 intent = new Intent(getActivity(), StreetScapeActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.text_make_dimens:
+                DimenTypes[] values = DimenTypes.values();
+                for (DimenTypes value : values) {
+                    MakeUtils.makeAll(DESIGN_WIDTH, value, Environment.getExternalStorageDirectory().getAbsolutePath()+"/dimens");
+                }
                 break;
             default:
         }

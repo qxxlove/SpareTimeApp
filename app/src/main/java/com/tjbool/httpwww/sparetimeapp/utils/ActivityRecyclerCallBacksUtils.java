@@ -18,7 +18,8 @@ import java.util.List;
  * 邮箱：123123@163.com
  */
 
-public class ActivityRecyclerCallBacksUtils  implements Application.ActivityLifecycleCallbacks,ActivityManagerState {
+public class ActivityRecyclerCallBacksUtils  implements Application.ActivityLifecycleCallbacks,
+                                                         ActivityManagerState {
 
     private List<Activity> activityList=new ArrayList<>();
     private List<Activity> resumeActivity=new ArrayList<>();
