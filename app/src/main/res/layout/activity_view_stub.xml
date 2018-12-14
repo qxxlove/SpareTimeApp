@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  
+    tools:context="com.tjbool.httpwww.sparetimeapp.activity.viewstub.ViewStubActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/text_show"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="显示"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/accent_bottom_navigation"
+            />
+        <TextView
+            android:id="@+id/text_change"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="切换"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/activity_dimens_ten"
+            android:background="@color/accent_bottom_navigation"
+
+            />
+        <TextView
+            android:id="@+id/text_hide"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="隐藏"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/activity_dimens_ten"
+            android:background="@color/accent_bottom_navigation"
+            />
+
+    </LinearLayout>
+
+     <include layout="@layout/include_common_layout"/>
+
+    <ViewStub
+        android:id="@+id/viewStub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/empty_layout"
+        />
+
+    <TextView
+        android:id="@+id/text_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/dialog_loading"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

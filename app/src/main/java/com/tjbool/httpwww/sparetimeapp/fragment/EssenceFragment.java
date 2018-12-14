@@ -12,7 +12,12 @@ import com.tjbool.httpwww.sparetimeapp.activity.ApplyPermissionTwoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.CanvasStudyActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.CoordinateSystemActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.MotionEventStudyOneActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.SeekBatDemoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SoapTestActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.thread.ThreadDemoActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.time.CountDownTimeActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.viewstub.ViewStubActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.viewstudy.ViewOneActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
 import com.tjbool.httpwww.sparetimeapp.layout.ConstraintLayoutStudyActivity;
 
@@ -26,6 +31,10 @@ import butterknife.OnClick;
  * update: 2018/1/16
  * version:
  *    参考： https://mp.weixin.qq.com/s/l3BgeKJN6nkphUBSD60bjw
+ *
+ *    Fragment FragmentManager FragmentTransaction 深入理解
+ *    https://blog.csdn.net/u011240877/article/details/78132990
+ *
  *
  */
 
@@ -105,7 +114,9 @@ public class EssenceFragment extends BaseFragment {
 
     @OnClick({R.id.text_one_essence_fragment, R.id.text_two_essence_fragment, R.id.text_soap_activity,
             R.id.text_coordinate_activity, R.id.text_canvas_one_activity, R.id.text_dagger_activity,
-            R.id.text_dagger_two_activity, R.id.text_constraint_activity, R.id.text_motionEvent_one_activity})
+            R.id.text_dagger_two_activity, R.id.text_constraint_activity, R.id.text_motionEvent_one_activity,
+            R.id.text_seekBar_one_activity,R.id.text_recyclerView_divider_activity,R.id.text_thread_demo_activity,
+            R.id.text_countdown_time_activity,R.id.text_view_activity,R.id.text_viewStub_activity})
     public void initClick(View view) {
         switch (view.getId()) {
             case R.id.text_one_essence_fragment:
@@ -143,6 +154,27 @@ public class EssenceFragment extends BaseFragment {
             case R.id.text_motionEvent_one_activity:
                 Intent intent8 = new Intent(getContext(), MotionEventStudyOneActivity.class);
                 startActivity(intent8);
+                break;
+            case R.id.text_seekBar_one_activity:
+                Intent intent9 = new Intent(getContext(), SeekBatDemoActivity.class);
+                startActivity(intent9);
+                break;
+            case R.id.text_recyclerView_divider_activity:
+                Intent intent10 = new Intent(getContext(), SeekBatDemoActivity.class);
+                startActivity(intent10);
+                break;
+            case R.id.text_thread_demo_activity:
+                Intent intent11 = new Intent(getContext(), ThreadDemoActivity.class);
+                startActivity(intent11);
+                break;
+            case R.id.text_countdown_time_activity:
+                startActivity(new Intent(getContext(), CountDownTimeActivity.class));
+                break;
+            case R.id.text_view_activity:
+                startActivity(new Intent(getContext(), ViewOneActivity.class));
+                break;
+            case R.id.text_viewStub_activity:
+                startActivity(new Intent(getContext(), ViewStubActivity.class));
                 break;
             default:
         }

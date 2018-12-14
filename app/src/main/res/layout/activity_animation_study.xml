@@ -23,8 +23,17 @@
          android:layout_marginTop="@dimen/activity_dimens_ten"
          android:layout_height="50dp"
          android:gravity="center"
-         android:text="位移效果"
+         android:text="位移效果之xml"
          />
+    <TextView
+        android:id="@+id/text_five"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="位移效果之java"
+        />
     <TextView
         android:id="@+id/text_two"
         android:layout_width="match_parent"
@@ -32,7 +41,16 @@
         android:background="@color/white"
         android:layout_marginTop="@dimen/activity_dimens_ten"
         android:gravity="center"
-        android:text="缩放效果"
+        android:text="缩放效果之xml"
+        />
+    <TextView
+        android:id="@+id/text_six"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="缩放效果之java"
         />
     <TextView
         android:id="@+id/text_three"
@@ -41,7 +59,16 @@
         android:background="@color/white"
         android:layout_marginTop="@dimen/activity_dimens_ten"
         android:gravity="center"
-        android:text="旋转效果"
+        android:text="旋转效果之xml"
+        />
+    <TextView
+        android:id="@+id/text_seven"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        android:gravity="center"
+        android:text="旋转效果之java"
         />
 
     <TextView

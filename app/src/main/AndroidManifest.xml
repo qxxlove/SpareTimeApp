@@ -25,6 +25,7 @@
     <uses-permission android:name="android.permission.BODY_SENSORS"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <supports-screens
         android:anyDensity="true"
@@ -106,6 +107,26 @@
         <activity android:name=".activity.StreetScapeActivity">
         </activity>
         <activity android:name=".mvp.view.UserLoginActivity">
+        </activity>
+        <activity android:name=".activity.AIDLActivity">
+        </activity>
+        <activity android:name=".activity.SeekBatDemoActivity">
+        </activity>
+        <activity
+            android:name=".activity.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity android:name=".activity.RecyclerDividerActivity">
+        </activity>
+        <activity android:name=".activity.thread.ThreadDemoActivity">
+        </activity>
+        <activity android:name=".activity.time.CountDownTimeActivity">
+        </activity>
+        <activity android:name=".activity.viewstudy.ViewOneActivity">
+        </activity>
+        <activity android:name=".activity.viewstub.ViewStubActivity">
         </activity>
     </application>
 

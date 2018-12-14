@@ -52,7 +52,9 @@ public class AnimatorStudyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animator_study);
         ButterKnife.bind(this);
 
+        /**属性动画之xml*/
         //initAnimatorSetByXml();
+        /**属性动画之java*/
         // initAnimatorSetByJava();
 
         // ofInt 和 ofFloat 基本一致，不做重复。
@@ -177,6 +179,7 @@ public class AnimatorStudyActivity extends AppCompatActivity {
     }
 
 
+    
     /**
      * 组合动画
      */

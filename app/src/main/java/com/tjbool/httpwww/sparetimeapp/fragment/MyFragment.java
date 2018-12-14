@@ -100,7 +100,7 @@ public class MyFragment extends BaseFragment {
                 // 局限性：  需要 Activity 经历正常的生命周期，即创建时调用onCreate（），结束时调用onDestroy（）
                 //           因为只有这样经历正常的生命周期才能将 Activity正确写入 & 写出 容器内,
                 //           否则会遗漏Activity  ，但适用面广（单/多任务栈/ 多种启动模式）
-                 //initRegisterActivityLifecycleCallbacks();
+                 initRegisterActivityLifecycleCallbacks();
                  // 6. RxBus
                 // 局限性： 和方式4类同，但是项目中没有使用Rxjava不建议使用
                  //initRxBus();

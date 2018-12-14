@@ -33,5 +33,11 @@
     <string name="internet_connect_fail">网络连接失败</string>
     <string name="getStudentBean">获取学生类通过注解</string>
 
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="no_data">没有数据，点击加载</string>
+    <string name="dialog_loading">加载中。。。</string>
+
 
 </resources>

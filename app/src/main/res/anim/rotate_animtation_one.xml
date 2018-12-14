@@ -7,7 +7,7 @@
         android:pivotX="50%"
         android:pivotY="50%"
         android:toDegrees="360"
-
+        android:repeatCount="-1"
         />
     <!--
     rotate 旋转动画效果

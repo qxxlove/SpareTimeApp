@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.tjbool.httpwww.sparetimeapp.activity.viewstudy.ViewOneActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="饼状图待完善"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_dimens_ten"
+        />
+    <com.tjbool.httpwww.sparetimeapp.weight.view.PieChartView
+        android:id="@+id/piechartview_one"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        />
+    <com.tjbool.httpwww.sparetimeapp.weight.view.CheckView
+        android:id="@+id/checkview_id"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/activity_dimens_ten"
+        >
+    <TextView
+        android:id="@+id/text_check"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:text="check"
+        android:gravity="center"
+        android:background="#f0f000"
+        />
+    <TextView
+        android:id="@+id/text_uncheck"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:text="unCheck"
+        android:gravity="center"
+        android:background="#ff00ff"
+        />
+    </LinearLayout>
+
+</LinearLayout>

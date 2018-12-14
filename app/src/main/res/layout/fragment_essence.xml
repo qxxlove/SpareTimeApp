@@ -101,5 +101,65 @@
             android:background="@color/white"
             android:layout_marginTop="@dimen/activity_dimens_ten"
             />
+        <TextView
+            android:id="@+id/text_seekBar_one_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android seekBar 学习"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
+        <TextView
+            android:id="@+id/text_recyclerView_divider_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android recycler divider 学习"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
+        <TextView
+            android:id="@+id/text_thread_demo_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android thread  学习"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
+        <TextView
+            android:id="@+id/text_countdown_time_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android 倒计时学习"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
+        <TextView
+            android:id="@+id/text_view_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android 自定义view学习"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
+        <TextView
+            android:id="@+id/text_viewStub_activity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="android viewStub"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/activity_dimens_ten"
+            />
     </LinearLayout>
 </ScrollView>

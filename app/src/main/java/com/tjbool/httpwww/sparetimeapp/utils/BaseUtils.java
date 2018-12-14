@@ -20,6 +20,7 @@ import android.os.Environment;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +83,13 @@ public class BaseUtils {
     public static void callPhone(Context context, String phone) {
         // 用intent启动拨打电话
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
-        //context.startActivity(intent);
+        if (intent.resolveActivity(context.getPackageManager()) != null){
+            /**需要动态申请权限*/
+            //context.startActivity(intent) ;
+        } else{
+            Log.e("ATG","进入失败");
+        }
+        
     }
 
     /**
@@ -561,6 +568,9 @@ public class BaseUtils {
         String timeLists = sdrs.format(new Date(time));
         return timeLists;
     }
+
+
+    
 
     /**
      * long型毫秒转时间格式

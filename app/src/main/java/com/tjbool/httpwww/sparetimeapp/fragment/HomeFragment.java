@@ -84,7 +84,7 @@ public class HomeFragment extends BaseFragment {
 
         MainTabAdapter adapter = new MainTabAdapter(getActivity().getSupportFragmentManager(), fragmentList);
         vpHomeFragment.setAdapter(adapter);
-        //ViewPager 出于优化体验的好心，默认去加载（第一页的前一页）和（第一页）和（第一页的后一页），
+        //ViewPager 出于优化体验的好心，默认去加载（第一页的前一页 )和（第一页的后一页），
         //   当然第一页（代指）的前一页和第一页（代指）的后一页可能是空的，来尽可能保证滑动的流畅性
         // setOffscreenPageLimit ：默认值是1（小于1的值就默认为1）
         // 实际项目开发中： 可是假如我们这是一个新闻资讯类的 app，每一个 tab 涉及了复杂的页面和大量的网络请求，
