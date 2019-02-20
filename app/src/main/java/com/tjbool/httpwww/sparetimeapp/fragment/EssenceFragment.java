@@ -14,6 +14,7 @@ import com.tjbool.httpwww.sparetimeapp.activity.CoordinateSystemActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.MotionEventStudyOneActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SeekBatDemoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SoapTestActivity;
+import com.tjbool.httpwww.sparetimeapp.activity.net.NetStateActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.thread.ThreadDemoActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.time.CountDownTimeActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.viewstub.ViewStubActivity;
@@ -116,7 +117,7 @@ public class EssenceFragment extends BaseFragment {
             R.id.text_coordinate_activity, R.id.text_canvas_one_activity, R.id.text_dagger_activity,
             R.id.text_dagger_two_activity, R.id.text_constraint_activity, R.id.text_motionEvent_one_activity,
             R.id.text_seekBar_one_activity,R.id.text_recyclerView_divider_activity,R.id.text_thread_demo_activity,
-            R.id.text_countdown_time_activity,R.id.text_view_activity,R.id.text_viewStub_activity})
+            R.id.text_countdown_time_activity,R.id.text_view_activity,R.id.text_viewStub_activity,R.id.text_net_change_activity})
     public void initClick(View view) {
         switch (view.getId()) {
             case R.id.text_one_essence_fragment:
@@ -175,6 +176,9 @@ public class EssenceFragment extends BaseFragment {
                 break;
             case R.id.text_viewStub_activity:
                 startActivity(new Intent(getContext(), ViewStubActivity.class));
+                break;
+            case R.id.text_net_change_activity:
+                startActivity(new Intent(getContext(), NetStateActivity.class));
                 break;
             default:
         }

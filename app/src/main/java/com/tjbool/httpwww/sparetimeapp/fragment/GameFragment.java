@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
@@ -27,6 +29,10 @@ public class GameFragment extends BaseFragment {
 
     @BindView(R.id.image_two)
     ImageView imageTwo;
+    @BindView(R.id.image_three)
+    ImageView imageThree;
+
+    private Animation circle_anim;
     
     public static GameFragment newInstance(String title) {
         GameFragment f = new GameFragment();
@@ -54,7 +60,9 @@ public class GameFragment extends BaseFragment {
 
        imageTwo.setImageResource(R.mipmap.icon_location_red_b);
 
-     
+       initAnim();
+
+       imageThree.startAnimation(circle_anim);
 
     }
 
@@ -66,6 +74,16 @@ public class GameFragment extends BaseFragment {
                 break;
             default:
         }
+    }
+
+    private void initAnim() {
+        circle_anim = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_round_rotate);
+        circle_anim = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        LinearInterpolator lin = new LinearInterpolator();
+        circle_anim.setInterpolator(lin);
+        circle_anim.setDuration(2000);//设置动画持续周期
+        circle_anim.setRepeatCount(-1);//设置重复次数
+        circle_anim.setFillAfter(true);//动画执行完后是否停留在执行完的状态
     }
 
 

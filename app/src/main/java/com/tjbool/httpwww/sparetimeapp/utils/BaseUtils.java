@@ -40,6 +40,7 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.Reader;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
@@ -689,5 +690,37 @@ public class BaseUtils {
         Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+phone));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    public  static  double  doubleDecimalFormat  (double number){
+        DecimalFormat df1 = new DecimalFormat("0.000000");
+        BigDecimal decimal = new BigDecimal( df1.format(number));
+       // double a =    decimal.doubleValue();
+
+         //BigDecimal b = new BigDecimal(number);
+         number = decimal.setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
+
+        String format = new DecimalFormat("#,##0.0000").format(new Double("96.1"));
+
+        return number;
+    }
+
+
+    /**
+     * 判断小数位
+     * @param number
+     * @return
+     */
+    public static int getNumberDecimalDigits(double number) {
+        if (number == (long)number) {
+            return 0;
+        }
+        int i = 0;
+        while (true){
+            i++;
+            if (number * Math.pow(10, i) % 1 == 0) {
+                return i;
+            }
+        }
     }
 }

@@ -5,17 +5,23 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.tjbool.httpwww.sparetimeapp.R;
 import com.tjbool.httpwww.sparetimeapp.activity.AnimationStudyActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.SingleMutileActivity;
 import com.tjbool.httpwww.sparetimeapp.activity.StreetScapeActivity;
 import com.tjbool.httpwww.sparetimeapp.base.BaseFragment;
+import com.tjbool.httpwww.sparetimeapp.utils.BaseUtils;
+import com.tjbool.httpwww.sparetimeapp.utils.SystemDateTime;
 import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
 import com.tjbool.httpwww.sparetimeapp.utils.screen.DimenTypes;
 import com.tjbool.httpwww.sparetimeapp.utils.screen.MakeUtils;
 import com.tjbool.httpwww.sparetimeapp.weight.CustomPopupWindowOne;
 
+import java.io.IOException;
+
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /** 
@@ -27,6 +33,13 @@ import butterknife.OnClick;
 */
 
 public class ScienceFragment extends BaseFragment {
+
+
+    @BindView(R.id.text_current_system_time)
+    TextView  textViewCurrentTime;
+    
+
+    public static final String  TAG = "ScienceFragment";
 
     private  Intent intent;
     /**
@@ -65,7 +78,8 @@ public class ScienceFragment extends BaseFragment {
 
     
     @OnClick({R.id.text_one_single_activity,R.id.text_animation_activity,R.id.text_show_popupWindow,
-            R.id.text_street_scape_activity,R.id.text_make_dimens})
+            R.id.text_street_scape_activity,R.id.text_make_dimens,R.id.text_update_system_time,
+            R.id.text_get_update_system_time})
     public  void   initClick(View view){
         switch (view.getId()){
             case R.id.text_one_single_activity:
@@ -91,6 +105,29 @@ public class ScienceFragment extends BaseFragment {
                     MakeUtils.makeAll(DESIGN_WIDTH, value, Environment.getExternalStorageDirectory().getAbsolutePath()+"/dimens");
                 }
                 break;
+            case R.id.text_update_system_time:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            SystemDateTime.setTime(10,30);
+                        } catch (IOException e) {
+                            Log.e(TAG,"set  time  error  one") ;
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            Log.e(TAG,"set  time  error  one") ;
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+                break;
+            case R.id.text_get_update_system_time:
+                long l = System.currentTimeMillis();
+                String currentTime =  BaseUtils.timeList(l);
+                textViewCurrentTime.setText(currentTime);
+                break;
+
             default:
         }
     }

@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import com.baidu.lbsapi.BMapManager;
 import com.baidu.lbsapi.MKGeneralListener;
+import com.squareup.leakcanary.LeakCanary;
+import com.tjbool.httpwww.sparetimeapp.activity.uncaughexception.UnCaughExceptionHandler;
 import com.tjbool.httpwww.sparetimeapp.utils.ActivityRecyclerCallBacksUtils;
 import com.tjbool.httpwww.sparetimeapp.utils.ToastUtils;
 
@@ -53,9 +55,30 @@ public class BaseApplication extends Application {
         }
 
         ToastUtils.init(true);
+        
+        /**初始化全局异常处理*/
+        UnCaughExceptionHandler.getInstance().init(this);
 
+        initLeak();
+}
+
+    /**
+     * 内存泄露检查工具
+     *  参考： https://www.jianshu.com/p/1e7e9b576391
+     */
+    private void initLeak() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            //此过程专用于LeakCanary用于堆分析。
+            //在这个过程中不应该初始化应用程序。
+            return;
+        }
+        LeakCanary.install(this);
+        // Normal app init code...
     }
 
+    
     private boolean ExistSDCard() {
         return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
     }
